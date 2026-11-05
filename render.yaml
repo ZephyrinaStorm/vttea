@@ -13,7 +13,7 @@ services:
       - key: LAVALINK_PASSWORD
         sync: false
       - key: LAVALINK_URI
-        value: http://ashburn5.kerit.in:9011
+        value: https://ashburn5.kerit.in:9011
       - key: DATABASE_URL
         fromDatabase:
           name: vttea-db
