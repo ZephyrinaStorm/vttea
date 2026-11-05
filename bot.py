@@ -4,7 +4,7 @@ from discord import app_commands
 
 logging.basicConfig(level=logging.INFO)
 TOKEN=os.environ.get('DISCORD_TOKEN')
-URI=os.environ.get('LAVALINK_URI','https://ashburn5.kerit.in:9011')
+URI=os.environ.get('LAVALINK_URI','http://ashburn5.kerit.in:9011')
 PASSWORD=os.environ.get('LAVALINK_PASSWORD')
 DB=os.environ.get('DATABASE_URL')
 if not TOKEN or not PASSWORD or not DB: raise RuntimeError('Set DISCORD_TOKEN, LAVALINK_PASSWORD and DATABASE_URL')
@@ -313,4 +313,5 @@ async def twentyfourseven(i:discord.Interaction,enabled:bool):
         await save(i.guild.id,'resume',{'channel':p.channel.id,'uri':p.current.uri if p.current else None})
 
 bot.run(TOKEN,log_handler=None)
+
 
