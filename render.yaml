@@ -1,0 +1,24 @@
+services:
+  - type: worker
+    name: vttea-bot
+    runtime: python
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: LAVALINK_PASSWORD
+        sync: false
+      - key: LAVALINK_URI
+        value: https://ashburn5.kerit.in:9011
+      - key: DATABASE_URL
+        fromDatabase:
+          name: vttea-db
+          property: connectionString
+databases:
+  - name: vttea-db
+    plan: basic-256mb
+

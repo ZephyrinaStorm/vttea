@@ -1,0 +1,4 @@
+discord.py[voice]==2.5.2
+wavelink==3.4.1
+asyncpg==0.30.0
+
